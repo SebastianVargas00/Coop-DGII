@@ -15,7 +15,7 @@ import Logo from "../images/logo.png";
 import { Ionicons } from "@expo/vector-icons";
 import Women from "../images/woman-writing.jpg";
 import Input from "../Components/Input";
-
+import Button from "../Components/Button";
 
 const initialUser = {
   ids: "",
@@ -23,9 +23,6 @@ const initialUser = {
 }
 
 export default function Login() {
-  // const [user, setUser] = useState();
-  const [pass, setPass] = useState();
-
   const [user, setUser] = useState(initialUser)
 
   const handleChange = (name, text) => {
@@ -37,7 +34,7 @@ export default function Login() {
   }
 
   function verifyData() {
-    if (user.length === 0 || pass.length === 0) {
+    if (user.ids.length === 0 || user.pass.length === 0) {
       Alert.alert("Adevertencia", "Complete los campos y intentelo de nuevo");
     } else {
       Alert.alert("Exito", "Completaste los campos", [{ text: "Ok" }]);
@@ -65,9 +62,20 @@ export default function Login() {
             icon="key-outline"
           />
 
-          <TouchableOpacity style={login.button} onPress={verifyData}>
-            <Text style={login.text_button}>iniciar sesion</Text>
+
+          <Button
+            btnStyled={login.button}
+            onPress={verifyData}
+            text="iniciar sesion"
+            txtStyled={login.text_button}
+          />
+
+          <TouchableOpacity>
+            <Text style={login.text_footer}>
+              ¿Tiene problema para Iniciar Sesión?
+            </Text>
           </TouchableOpacity>
+
 
           <TouchableOpacity>
             <Text style={login.text_footer}>
