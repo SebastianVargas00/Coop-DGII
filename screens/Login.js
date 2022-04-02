@@ -16,6 +16,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Women from "../images/woman-writing.jpg";
 import Input from "../Components/Input";
 import Button from "../Components/Button";
+import BtnLink from "../Components/btnLink";
 
 const initialUser = {
   ids: "",
@@ -69,19 +70,14 @@ export default function Login() {
             text="iniciar sesion"
             txtStyled={login.text_button}
           />
-
-          <TouchableOpacity>
-            <Text style={login.text_footer}>
-              ¿Tiene problema para Iniciar Sesión?
-            </Text>
-          </TouchableOpacity>
+          <BtnLink
+            txtStyled={login.text_footer}>
+            ¿Tiene problema para Iniciar Sesión?
+          </BtnLink>
 
 
-          <TouchableOpacity>
-            <Text style={login.text_footer}>
-              ¿Tiene problema para Iniciar Sesión?
-            </Text>
-          </TouchableOpacity>
+
+
           {/*Cuando el teclado se posiciona la imagen sube al tope del celular*/}
           <Image source={Women} style={login.img_footer} />
         </View>
