@@ -1,22 +1,21 @@
+import React, { useState } from "react";
 import {
   View,
-  Text,
   Image,
-  TextInput,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   Keyboard,
   SafeAreaView,
   Alert,
 } from "react-native";
-import React, { useState } from "react";
+
+
+import Logo from "../assets/images/logo.png";
+import Women from "../assets/images/woman-writing.jpg";
+
 import { login } from "../styles/login";
-import Logo from "../images/logo.png";
-import { Ionicons } from "@expo/vector-icons";
-import Women from "../images/woman-writing.jpg";
 import Input from "../Components/Input";
 import Button from "../Components/Button";
-import BtnLink from "../Components/btnLink";
+import BtnLink from "../Components/BtnLink";
 
 const initialUser = {
   ids: "",
@@ -35,11 +34,14 @@ export default function Login() {
   }
 
   function verifyData() {
-    if (user.ids.length === 0 || user.pass.length === 0) {
+    if (!user.ids.trim() || !user.pass.trim()) {
       Alert.alert("Adevertencia", "Complete los campos y intentelo de nuevo");
     } else {
       Alert.alert("Exito", "Completaste los campos", [{ text: "Ok" }]);
     }
+
+    console.log(`campo 1 ${Boolean(user.ids.trim())}`)
+    console.log(`campo 2 ${Boolean(user.pass.trim())}`)
   }
 
   return (
