@@ -1,21 +1,21 @@
+import React, { useState } from "react";
 import {
   View,
-  Text,
   Image,
-  TextInput,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   Keyboard,
   SafeAreaView,
   Alert,
 } from "react-native";
-import React, { useState } from "react";
-import { login } from "../styles/login";
-import Logo from "../images/logo.png";
-import { Ionicons } from "@expo/vector-icons";
-import Women from "../images/woman-writing.jpg";
-import Input from "../Components/Input";
 
+
+import Logo from "../assets/images/logo.png";
+import Women from "../assets/images/woman-writing.jpg";
+
+import { login } from "../styles/login";
+import Input from "../Components/Input";
+import Button from "../Components/Button";
+import BtnLink from "../Components/BtnLink";
 
 const initialUser = {
   ids: "",
@@ -23,9 +23,6 @@ const initialUser = {
 }
 
 export default function Login() {
-  // const [user, setUser] = useState();
-  const [pass, setPass] = useState();
-
   const [user, setUser] = useState(initialUser)
 
   const handleChange = (name, text) => {
@@ -37,11 +34,14 @@ export default function Login() {
   }
 
   function verifyData() {
-    if (user.length === 0 || pass.length === 0) {
+    if (!user.ids.trim() || !user.pass.trim()) {
       Alert.alert("Adevertencia", "Complete los campos y intentelo de nuevo");
     } else {
       Alert.alert("Exito", "Completaste los campos", [{ text: "Ok" }]);
     }
+
+    console.log(`campo 1 ${Boolean(user.ids.trim())}`)
+    console.log(`campo 2 ${Boolean(user.pass.trim())}`)
   }
 
   return (
@@ -65,15 +65,21 @@ export default function Login() {
             icon="key-outline"
           />
 
-          <TouchableOpacity style={login.button} onPress={verifyData}>
-            <Text style={login.text_button}>iniciar sesion</Text>
-          </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Text style={login.text_footer}>
-              ¿Tiene problema para Iniciar Sesión?
-            </Text>
-          </TouchableOpacity>
+          <Button
+            btnStyled={login.button}
+            onPress={verifyData}
+            text="iniciar sesion"
+            txtStyled={login.text_button}
+          />
+          <BtnLink
+            txtStyled={login.text_footer}>
+            ¿Tiene problema para Iniciar Sesión?
+          </BtnLink>
+
+
+
+
           {/*Cuando el teclado se posiciona la imagen sube al tope del celular*/}
           <Image source={Women} style={login.img_footer} />
         </View>
