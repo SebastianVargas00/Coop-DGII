@@ -39,9 +39,6 @@ export default function Login() {
     } else {
       Alert.alert("Exito", "Completaste los campos", [{ text: "Ok" }]);
     }
-
-    console.log(`campo 1 ${Boolean(user.ids.trim())}`)
-    console.log(`campo 2 ${Boolean(user.pass.trim())}`)
   }
 
   return (
