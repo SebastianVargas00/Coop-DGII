@@ -15,8 +15,8 @@ export const login = StyleSheet.create({
   image: {
     width: "70%",
     height: windowHeight * 0.3,
-    maxWidth: 300,
-    maxHeight: 200,
+    maxWidth: "50%",
+    maxHeight: "50%",
     marginBottom: "6%",
   },
   input_container: {
