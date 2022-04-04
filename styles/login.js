@@ -1,24 +1,26 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar, Dimensions } from "react-native";
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export const login = StyleSheet.create({
   view: {
     flex: 1,
     backgroundColor: "#ffff",
+    marginTop: StatusBar.currentHeight,
   },
   container: {
-    flex: 1,
-    position: "relative",
     justifyContent: "center",
     alignItems: "center",
   },
   image: {
-    marginTop: 100,
-    width: 150,
-    height: 150,
-    marginBottom: 50,
+    width: "70%",
+    height: windowHeight * 0.3,
+    maxWidth: 300,
+    maxHeight: 200,
+    marginBottom: "6%",
   },
   input_container: {
-    width: "90%",
+    width: windowWidth - 55,
     position: "relative",
   },
   input: {
@@ -28,25 +30,25 @@ export const login = StyleSheet.create({
     borderColor: "#A6ACAF",
     color: "#000",
     fontSize: 16,
-    paddingLeft: 40,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    marginTop: 10,
-    marginBottom: 10,
+    paddingLeft: "12%",
+    paddingHorizontal: "5%",
+    paddingVertical: "3%",
+    marginTop: "3%",
+    marginBottom: "2%",
   },
   inputicon: {
     position: "absolute",
-    left: 5,
-    top: 22,
+    left: "2%",
+    top: "33%",
   },
   button: {
-    width: "90%",
-    paddingHorizontal: 25,
-    paddingVertical: 10,
+    width: windowWidth - 55,
+    paddingHorizontal: "10%",
+    paddingVertical: "4%",
     borderRadius: 10,
     backgroundColor: "#239B56",
-    marginTop: 10,
-    marginBottom: 15,
+    marginTop: "4%",
+    marginBottom: "3%",
   },
   text_button: {
     color: "#ffff",
@@ -55,15 +57,20 @@ export const login = StyleSheet.create({
     textTransform: "uppercase",
     textAlign: "center",
   },
+  footer: {
+    width: windowWidth,
+    height: "40%",
+  },
   text_footer: {
     color: "#2874A6",
     fontSize: 16,
-    marginTop: 25,
+    marginTop: "4%",
+    textAlign: "center",
   },
   img_footer: {
-    marginTop: 100,
+    marginTop: "15%",
     width: "100%",
-    height: 250,
+    height: "99%",
     opacity: 0.4,
   },
 });

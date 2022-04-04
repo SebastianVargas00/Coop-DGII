@@ -6,8 +6,8 @@ import {
   Keyboard,
   SafeAreaView,
   Alert,
+  ImageBackground,
 } from "react-native";
-
 
 import Logo from "../assets/images/logo.png";
 import Women from "../assets/images/woman-writing.jpg";
@@ -15,23 +15,22 @@ import Women from "../assets/images/woman-writing.jpg";
 import { login } from "../styles/login";
 import Input from "../Components/Input";
 import Button from "../Components/Button";
-import BtnLink from "../Components/BtnLink";
+import BtnLink from "../Components/btnLink";
 
 const initialUser = {
   ids: "",
-  pass: ""
-}
+  pass: "",
+};
 
 export default function Login() {
-  const [user, setUser] = useState(initialUser)
+  const [user, setUser] = useState(initialUser);
 
   const handleChange = (name, text) => {
     setUser({
       ...user,
-      [name]: text
-    })
-
-  }
+      [name]: text,
+    });
+  };
 
   function verifyData() {
     if (!user.ids.trim() || !user.pass.trim()) {
@@ -45,8 +44,7 @@ export default function Login() {
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView style={login.view}>
         <View style={login.container}>
-          <Image source={Logo} style={login.image} />
-
+          <Image source={Logo} style={login.image} resizeMode="contain" />
 
           <Input
             placeholder="Cedula"
@@ -62,23 +60,22 @@ export default function Login() {
             icon="key-outline"
           />
 
-
           <Button
             btnStyled={login.button}
             onPress={verifyData}
             text="iniciar sesion"
             txtStyled={login.text_button}
           />
-          <BtnLink
-            txtStyled={login.text_footer}>
+        </View>
+        <View style={login.footer}>
+          <BtnLink txtStyled={login.text_footer}>
             ¿Tiene problema para Iniciar Sesión?
           </BtnLink>
-
-
-
-
-          {/*Cuando el teclado se posiciona la imagen sube al tope del celular*/}
-          <Image source={Women} style={login.img_footer} />
+          <ImageBackground
+            source={Women}
+            style={login.img_footer}
+            resizeMode="cover"
+          />
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
