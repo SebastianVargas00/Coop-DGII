@@ -1,16 +1,21 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Login from "./screens/Login";
-
+import Drawer from "./Components/Drawer(Login)";
+import Home from "./screens/Home";
 export default function App() {
   const Tab = createStackNavigator();
 
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Login">
+      <Tab.Navigator initialRouteName="Drawer(Login)">
         <Tab.Screen
-          name="Login"
-          component={Login}
+          name="Drawer(Login)"
+          component={Drawer}
+          options={{ header: () => null }}
+        ></Tab.Screen>
+        <Tab.Screen
+          name="Home"
+          component={Home}
           options={{ header: () => null }}
         ></Tab.Screen>
       </Tab.Navigator>
