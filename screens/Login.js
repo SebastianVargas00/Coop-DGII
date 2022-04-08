@@ -17,6 +17,8 @@ import Input from "../Components/Input";
 import Button from "../Components/Button";
 import BtnLink from "../Components/BtnLink";
 
+
+
 const initialUser = {
   ids: "",
   pass: ""
@@ -40,8 +42,7 @@ export default function Login() {
       Alert.alert("Exito", "Completaste los campos", [{ text: "Ok" }]);
     }
 
-    console.log(`campo 1 ${Boolean(user.ids.trim())}`)
-    console.log(`campo 2 ${Boolean(user.pass.trim())}`)
+
   }
 
   return (
