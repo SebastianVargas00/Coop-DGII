@@ -21,13 +21,14 @@ const style = StyleSheet.create({
         height:120,
         borderRadius:20,
         shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.58,
-        shadowRadius: 16.00,
-        elevation: 2,
+shadowOffset: {
+	width: 0,
+	height: 12,
+},
+shadowOpacity: 0.58,
+shadowRadius: 16.00,
+
+elevation: 24,
     },
     body:{
       flex:1, 
