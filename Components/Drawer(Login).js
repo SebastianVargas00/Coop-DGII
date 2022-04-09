@@ -8,13 +8,14 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+import Colors from "../theme/Colors";
 
 export default function Drawer() {
   const Drawer = createDrawerNavigator();
 
   return (
     <Drawer.Navigator
-      initialRouteName="Login"
+      initialRouteName="Contact"
       screenOptions={{
         headerShown: false,
         drawerLabelStyle: { fontSize: 16, marginLeft: -20 },
@@ -58,6 +59,9 @@ export default function Drawer() {
           drawerIcon: ({ color }) => (
             <AntDesign name="contacts" size={24} color={color} />
           ),
+          headerTintColor:Colors.primary,
+           headerTitleAlign:"center", 
+           headerShadowVisible:false
         }}
       />
     </Drawer.Navigator>

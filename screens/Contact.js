@@ -18,32 +18,22 @@ const Contact = () => {
   const [isEmailModalOpen, openEmailModal, closeEmailModal] = useModal(false);
 
   return (
-    <View style={{ flex: 1, backgroundColor: Colors.bg_color }}>
-      <View
-        style={{ backgroundColor: "red", flex: 0.5, justifyContent: "center" }}
-      >
+    <View style={contact.container}>
+      <View style={contact.header}>
+        <Text style={contact.Title}>Contacto </Text>
         <Image
           source={contanctUs}
           resizeMode="contain"
-          style={{ maxWidth: width }}
+          style={contact.header_img}
         />
       </View>
       <View style={{ flex: 1 }}>
-        <Text style={{ textAlign: "center", marginBottom: 10 }}>
-          How can i help you?
-        </Text>
-        <Text style={{ textAlign: "center", marginHorizontal: 30 }}>
+        <Text style={contact.body_title}>How can i help you?</Text>
+        <Text style={contact.body_description}>
           It looks like you are experiencing problems with our sign up process.
           We are here to help so please get in touch with us
         </Text>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
+        <View style={contact.body_buttons}>
           <IconButton
             title="Call to us"
             handlePress={openCallModal}
@@ -93,9 +83,8 @@ const Contact = () => {
           visible={isEmailModalOpen}
           transparent={true}
         >
-
           <CardModal closeModal={closeEmailModal} title="Email us">
-          <FlatList
+            <FlatList
               data={Links}
               renderItem={({ item, key }) => (
                 <Item
@@ -114,7 +103,6 @@ const Contact = () => {
         </Modal>
       </View>
     </View>
-
   );
 };
 
@@ -138,30 +126,30 @@ const Links = [
     icon: <MaterialIcons name="email" size={24} color={Colors.secondary} />,
     title: "Correo electronico",
     sudtitle: "cliente@gmail.com",
-  }
+  },
 ];
 
 const Call = [
-    {
-        idx: 4,
-        icon: (
-          <AntDesign name="facebook-square" size={24} color={Colors.secondary} />
-        ),
-        title: "Facebook",
-        sudtitle: "/banco_RD",
-      },
-      {
-        idx: 5,
-        icon: <AntDesign name="twitter" size={24} color={Colors.secondary} />,
-        title: "Twitter",
-        sudtitle: "@banco_RD",
-      },
-      {
-        idx: 6,
-        icon: <AntDesign name="instagram" size={24} color={Colors.secondary} />,
-        title: "Instagram",
-        sudtitle: "@Banco_RD2",
-      },
-]
+  {
+    idx: 4,
+    icon: (
+      <AntDesign name="facebook-square" size={24} color={Colors.secondary} />
+    ),
+    title: "Facebook",
+    sudtitle: "/banco_RD",
+  },
+  {
+    idx: 5,
+    icon: <AntDesign name="twitter" size={24} color={Colors.secondary} />,
+    title: "Twitter",
+    sudtitle: "@banco_RD",
+  },
+  {
+    idx: 6,
+    icon: <AntDesign name="instagram" size={24} color={Colors.secondary} />,
+    title: "Instagram",
+    sudtitle: "@Banco_RD2",
+  },
+];
 
 export default Contact;
