@@ -15,8 +15,8 @@ export default function Divisas() {
     <View
       style={{
         flex: 0,
-        width: Dimensions.get("screen").width,
-        height: Dimensions.get("screen").height - 47,
+        width: Dimensions.get("window").width,
+        height: Dimensions.get("window").height,
       }}
     >
       <Tab

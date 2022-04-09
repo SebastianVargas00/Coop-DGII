@@ -132,8 +132,15 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     height: "9%",
-    borderBottomWidth: 1,
-    borderBottomColor: "#808080",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
   },
   rates_header_text: {
     fontSize: 18,
@@ -143,10 +150,11 @@ export const styles = StyleSheet.create({
   //Rates Box
   rates_box: {
     width: "95%",
-    height: "25%",
+    height: "30%",
     marginTop: "5%",
     marginLeft: "2%",
     marginRight: "2%",
+    marginBottom: "3%",
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "#808080",

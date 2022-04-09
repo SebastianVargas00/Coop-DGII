@@ -16,7 +16,7 @@ import { Entypo } from "@expo/vector-icons";
 import { styles } from "../styles/login_page";
 import Input from "../Components/Input";
 import Button from "../Components/Button";
-import BtnLink from "../Components/btnLink";
+import BtnLink from "../Components/BtnLink";
 
 const initialUser = {
   ids: "",
