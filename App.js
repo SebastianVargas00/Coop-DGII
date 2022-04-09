@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Contact">
+      <Tab.Navigator initialRouteName="Login">
         <Tab.Screen
           name="Login"
           component={Login}
